@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My first IW Project</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+  <body bgcolor="#FFBCBC">
+
+   <div class="firstContainer">
+       <img id="profileImage"  height="180" width="150">
+       <h2>Sushila Thapa Magar</h2>
+       <p><h3>Learning, a shortcut to the intellectual world.</h3></p>
+
+     </div>
+
+     <hr>
+
+     <div class="table">
+       <h2> Hobbies </h2>
+  <table cellspacing="10" border="2">
+    <thead>
+      <tr>
+        <th> Creativity</th>
+        <th> Entertainment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td> Writing </td>
+        <td> Watching Anime </td>
+      </tr>
+      <tr>
+        <td> Reading Novels</td>
+        <td> Playing Mobile Games</td>
+      </tr>
+    </tbody>
+  </table>
+       </div>
+     <hr>
+
+ <h2 id="skills"> Skills</h2>
+       <div class="skill1-row">
+
+         <img class="writing" src="https://image.flaticon.com/icons/png/512/2279/2279115.png"
+          alt="writing">
+         <h3>Writing</h3>
+         <p class="writing-description">I am quite confident about writing and reading stories.</p>
+       </div>
+       <div class="skill2-row">
+         <img class="communication" src="https://image.flaticon.com/icons/png/512/608/608968.png"
+          alt="communication">
+         <h3>Communication</h3>
+         <p class="clear">I strongly believe that I have good skills in communication.</p>
+       </div>
+     </div>
+
+   <hr>
+
+   <div class="myProjects">
+  <h2> My Projects</h2>
+   <h4 id="repoInformation"></h4>
+
+  <script>
+    fetch("https://api.github.com/users/sushilathapa")
+
+    .then(response => response.json())
+    .then(function(data)
+    {
+    console.log(data)
+    let repoCount = data['public_repos']
+    let repoInfo = 'I have ' + repoCount + ' repos on GitHub.'
+
+    document.getElementById('repoInformation').textContent = repoInfo
+    document.getElementById('profileImage').src = data['avatar_url']
+
+    })
+
+    </script>
+   </div>
+
+   <h4 id ="reposList"></h4>
+
+       <script>
+           fetch("https://api.github.com/users/sushilathapa/repos")
+           .then(response => response.json())
+           .then(function(data)
+           {
+           console.log(data)
+           let m = data.length;
+           var n = parseInt(m);
+           let reposName = "";
+           for(i = 0; i < n; i++)
+           {
+           reposName += " Repo " + i +" "+ data[i]['name'] +"<br>"+ "<br>";
+          }
+         document.getElementById('reposList').innerHTML = reposName;
+         });
+       </script>
+       </h4>
+  </body>
+</html>

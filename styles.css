@@ -1,0 +1,65 @@
+
+p {
+  font-family: 'Dancing Script', cursive;
+}
+
+.firstContainer {
+  position: relative;
+  margin-left: 350px;
+  padding-top: 20px;
+}
+
+hr{
+  background-color: whitesmoke;
+  border-style: none;
+  border-top-style: dotted;
+  width: 15%;
+ }
+
+ #skills {
+ margin-left: 435px;
+ margin-top:50px;
+ }
+
+ .table{
+ margin-left: 150px;
+ margin-bottom:50px;
+ }
+
+ .skill1-row {
+  width: 50%;
+  margin: 20px auto 50px auto;
+  text-align: left;
+}
+
+.skill2-row {
+  width: 50%;
+  margin: 50px auto 50px auto;
+  text-align: left;
+}
+
+.writing {
+  width: 25%;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 50px;
+
+}
+
+
+.communication {
+  width: 25%;
+  float: right;
+  margin-left: 30px;
+
+}
+
+.myProjects{
+margin-top:50px;
+margin-left: 150px;
+}
+
+#reposList{
+margin-top:50px;
+margin-left: 150px;
+}
